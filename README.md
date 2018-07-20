@@ -63,7 +63,7 @@ Folowing are the options to be passed :
 
 #### fireEvent({ event, data, elementId })
 ``` javascript
-GTM.init({
+GTM.fireEvent({
     event: 'gtm-event',
     data: {
         value: 'gtm event value',
