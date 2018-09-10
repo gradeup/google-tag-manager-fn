@@ -41,7 +41,7 @@ Folowing are the options to be passed :
 
 #### appendDL({ dataLayerName, dataLayer, state, reactFlag, event })
 ``` javascript
-GTM.init({
+GTM.appendDL({
     dataLayerName: 'dataLayer', 
     dataLayer: {
         value: 'gtm variable',
