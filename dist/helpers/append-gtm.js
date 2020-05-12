@@ -22,7 +22,9 @@ var appendGtm = function appendGtm(_ref) {
 	    events = _ref$events === undefined ? {} : _ref$events,
 	    _ref$dataLayerName = _ref.dataLayerName,
 	    dataLayerName = _ref$dataLayerName === undefined ? 'dataLayer' : _ref$dataLayerName,
-	    reactFlag = _ref.reactFlag;
+	    reactFlag = _ref.reactFlag,
+	    _ref$nonce = _ref.nonce,
+	    nonce = _ref$nonce === undefined ? '' : _ref$nonce;
 
 	var eventsVar = (0, _utils.stringify)(events).slice(1, -1);
 	var previewVar = '';
@@ -36,7 +38,7 @@ var appendGtm = function appendGtm(_ref) {
 
 	/* Google Tag Manager (script) : Goes in the head tag */
 	var noscript = '\n\t\t(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\': new Date().getTime(),event:\'gtm.js\', ' + eventsVar + ' });var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src= \'https://www.googletagmanager.com/gtm.js?id=\'+i+dl+\'' + authVar + previewVar + '\';f.parentNode.insertBefore(j,f); })(window,document, \'script\', \'' + dataLayerName + '\', \'' + id + '\');\n\t\t';
-	(0, _appendToHtml2.default)({ data: noscript, head: true, reactFlag: reactFlag });
+	(0, _appendToHtml2.default)({ data: noscript, head: true, reactFlag: reactFlag, nonce: nonce });
 	/* Google Tag Manager (script) : Goes in the head tag */
 
 	/* Google Tag Manager (noscript) : Goes in the body tag */

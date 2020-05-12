@@ -18,7 +18,9 @@ var appendToHTML = function appendToHTML(_ref) {
 	    _ref$head = _ref.head,
 	    head = _ref$head === undefined ? false : _ref$head,
 	    _ref$reactFlag = _ref.reactFlag,
-	    reactFlag = _ref$reactFlag === undefined ? false : _ref$reactFlag;
+	    reactFlag = _ref$reactFlag === undefined ? false : _ref$reactFlag,
+	    _ref$nonce = _ref.nonce,
+	    nonce = _ref$nonce === undefined ? '' : _ref$nonce;
 
 	try {
 		if (reactFlag) {
@@ -33,6 +35,9 @@ var appendToHTML = function appendToHTML(_ref) {
 				elem = document.createElement('noscript');
 			} else {
 				elem = document.createElement('script');
+			}
+			if (nonce) {
+				elem.setAttribute("nonce", nonce);
 			}
 			elem.innerHTML = data;
 			if (head && document) {

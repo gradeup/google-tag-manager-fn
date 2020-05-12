@@ -26,13 +26,15 @@ var GTM = {
 		    events = _ref.events,
 		    dataLayerName = _ref.dataLayerName,
 		    dataLayer = _ref.dataLayer,
-		    reactFlag = _ref.reactFlag;
+		    reactFlag = _ref.reactFlag,
+		    _ref$nonce = _ref.nonce,
+		    nonce = _ref$nonce === undefined ? '' : _ref$nonce;
 
 		if (!id) {
 			console.log('[Google Tag Manager] : requires container id');
 			return;
 		}
-		(0, _appendGtm2.default)({ id: id, preview: preview, auth: auth, events: events, dataLayerName: dataLayerName, reactFlag: reactFlag });
+		(0, _appendGtm2.default)({ id: id, preview: preview, auth: auth, events: events, dataLayerName: dataLayerName, reactFlag: reactFlag, nonce: nonce });
 		(0, _dataLayer2.default)({ id: id, dataLayerName: dataLayerName, dataLayer: dataLayer, state: 0, reactFlag: reactFlag });
 	},
 	appendDL: function appendDL(_ref2) {
