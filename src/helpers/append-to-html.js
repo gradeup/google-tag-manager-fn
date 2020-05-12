@@ -1,6 +1,6 @@
 import React from 'react';
 
-const appendToHTML = ({data = '', noscript = false, head = false, reactFlag = false}) => {
+const appendToHTML = ({data = '', noscript = false, head = false, reactFlag = false, nonce = ''}) => {
 	try {
 		if (reactFlag) {
 			if (noscript) {
@@ -14,6 +14,9 @@ const appendToHTML = ({data = '', noscript = false, head = false, reactFlag = fa
 				elem = document.createElement('noscript');
 			} else {
 				elem = document.createElement('script');
+			}
+			if(nonce) {
+				elem.setAttribute("nonce", nonce);
 			}
 			elem.innerHTML = data;
 			if (head && document) {
