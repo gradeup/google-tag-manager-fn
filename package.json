@@ -1,5 +1,5 @@
 {
-	"name": "google-tag-manager-fn",
+	"name": "@gradeup/google-tag-manager-fn",
 	"version": "1.0.5",
 	"description": "Google Tag Manager's functional implementation containing script initialization, datalayer handling & events",
 	"main": "dist/index.js",
