@@ -12,6 +12,14 @@ const GTM = {
 		dataLayerFn({id, dataLayerName, dataLayer, state: 0, reactFlag});
 	},
 	appendDL: ({ dataLayerName, dataLayer, state, reactFlag, event }) => {
+		// pageurl: window.location.href on gtm, will create discrepency with
+		// pagename: datalayer.get('pageName')
+		// because href is calculated at the time and pagename is already present in datalayer
+		// appending pageurl to datalayer too,
+		// to sync pagename and pageurl
+		if (dataLayer && dataLayer.pageName) {
+			dataLayer.dlPageUrl = dataLayer.dlPageUrl || global.location.href;
+		}
 		dataLayerFn({dataLayerName, dataLayer, state, reactFlag, event});
 	},
 	fireEvent

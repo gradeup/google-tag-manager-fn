@@ -44,6 +44,14 @@ var GTM = {
 		    reactFlag = _ref2.reactFlag,
 		    event = _ref2.event;
 
+		// pageurl: window.location.href on gtm, will create discrepency with
+		// pagename: datalayer.get('pageName')
+		// because href is calculated at the time and pagename is already present in datalayer
+		// appending pageurl to datalayer too,
+		// to sync pagename and pageurl
+		if (dataLayer && dataLayer.pageName) {
+			dataLayer.dlPageUrl = dataLayer.dlPageUrl || global.location.href;
+		}
 		(0, _dataLayer2.default)({ dataLayerName: dataLayerName, dataLayer: dataLayer, state: state, reactFlag: reactFlag, event: event });
 	},
 	fireEvent: _fireEvent2.default
